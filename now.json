@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "linter-overload.now.sh",
+  "builds": [{ "src": "dist/**/*", "use": "@now/static" }],
+  "routes": [
+    { "src": "/\\d/?", "dest": "/dist/" },
+    { "src": "/(.*)", "dest": "/dist/$1" }
+  ]
+}

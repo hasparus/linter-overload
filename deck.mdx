@@ -1,0 +1,263 @@
+import React from "react";
+import { Head, Notes, Image } from "mdx-deck";
+import { Flex } from "@rebass/emotion";
+import { Global, css } from "@emotion/core";
+
+import { Steps } from "./components";
+import { GlobalStyles } from "./theme";
+
+export { theme } from "./theme";
+
+<Head>
+  <title>Linter Overload</title>
+  {/* https://flatuicolors.com/palette/ca */}
+  <Global
+    styles={css`
+      del {
+        color: #ff6b6b;
+      }
+      ins {
+        text-decoration: none;
+        color: #1dd1a1;
+      }
+    `}
+  />
+</Head>
+
+# Linter Overload
+
+---
+
+> Linting is for weaklings and static analysis makes you eventually suck at debugging.
+
+---
+
+# thx bye
+
+---
+
+<Image src="/assets/taylor-grote-vVaRqEeb_Ss-unsplash.jpg" />
+
+---
+
+> Linting is for weaklings and static analysis makes you eventually suck at debugging.
+
+~a guy I used to work with
+
+---
+
+# Linter Overload
+
+## for reals
+
+<Notes>
+
+How many of you are new to web development or static code analysis?
+Put your hands up, don't be shy.
+
+</Notes>
+
+---
+
+# What is a linter anyway?
+
+---
+
+<Flex
+  style={{
+    width: "100vw",
+    height: "100vh",
+    backgroundImage: "url('/assets/Annotation 2019-06-26 054217.png')",
+    backgroundPosition: "50% 50%",
+    backgroundRepeat: "no-repeat",
+  }}
+  justifyContent="center"
+  alignItems="center"
+/>
+
+---
+
+# Which one should we use?
+
+---
+
+<ul
+  style={{
+    padding: 0,
+    listStyle: "none",
+  }}
+>
+  <li style={{ fontSize: "3em" }}>JSLint</li>
+  <li style={{ fontSize: "3em" }}>JSHint</li>
+  <li style={{ fontSize: "3em" }}>ESLint</li>
+  <li style={{ fontSize: "3em" }}>TSLint</li>
+</ul>
+
+<Notes>
+  I got that list from first Google search result. Read it aloud. It's like a
+  mumble rap song.
+</Notes>
+
+---
+
+<ul
+  style={{
+    padding: 0,
+    listStyle: "none",
+  }}
+>
+  <li style={{ fontSize: "3em" }}>
+    <del>JSLint</del>
+  </li>
+  <li style={{ fontSize: "3em" }}>
+    <del>JSHint</del>
+  </li>
+  <li style={{ fontSize: "3em" }}>ESLint</li>
+  <li style={{ fontSize: "3em" }}>TSLint</li>
+</ul>
+
+<Notes>Forget these two guys. It's 2019.</Notes>
+
+---
+
+<ul
+  style={{
+    padding: 0,
+    listStyle: "none",
+    textAlign: "center",
+  }}
+>
+  <li style={{ fontSize: "3em" }}>
+    <del>JSLint</del>
+  </li>
+  <li style={{ fontSize: "3em" }}>
+    <del>JSHint</del>
+  </li>
+  <li style={{ fontSize: "3em" }}>
+    <ins>TS</ins>ESLint
+  </li>
+  <li style={{ fontSize: "3em" }}>
+    <del>TSLint</del>
+  </li>
+</ul>
+
+<Notes>
+  In february this year Palantir announced TSList deprecation. Really talented
+  people are working on `typescript-eslint` monorepo.
+</Notes>
+
+---
+
+<ul
+  style={{
+    padding: 0,
+    listStyle: "none",
+    textAlign: "center",
+  }}
+>
+  <li style={{ fontSize: "3em" }}>ESLint</li>
+  <li style={{ fontSize: "3em" }}>
+    <ins>Wotan</ins>
+  </li>
+</ul>
+
+<Notes>
+  And there's Wotan, new kid on the linter block. This March, Klaus Meinhardt,
+  author of Wotan has published a VSCode extension for it. Why should I care
+  about Wotan? Well -- it supports TSLint rules, preprocessors and TypeScript
+  project references and doesn't introduce syntax errors with autofixes.
+</Notes>
+
+---
+
+Okay, I know I should probably use ESLint or try out Wotan.
+
+But **won't linter slow me down?**
+
+---
+
+# It will.
+
+<Notes>
+
+You can procrastinate and argue about formatting rules as long as you want to.
+
+</Notes>
+
+---
+
+# if you don't use Prettier.
+
+<Notes>
+
+Just get rid of the rules that don't help you.
+
+That's it.
+Fixing formatting because linter tells you to sucks ass.
+Just use Prettier.
+Even if you hate how your code looks like after being formatted by Prettier,
+you can get used to it and you're not getting paid to format code,
+you're getting paid for being productive and shipping features.
+
+</Notes>
+
+---
+
+# What should we keep?
+
+- 🔪🐞 Rules that help us catch bugs
+- 😊✨ Rules that improve your product and help you avoid being a bad person like `eslint-plugin-jsx-a11y`
+
+<Notes>
+
+- Rules that help me catch bugs (sonarjs / sonarts and the like)
+- Rules that improve your product and help you avoid being a bad person like `eslint-plugin-jsx-a11y`.
+
+That's all. Now you're friends with your linter.
+
+</Notes>
+
+---
+
+Can I already ditch TSLint for ESLint. **Does it hurt?**
+
+<Notes>
+
+Yeah, you can and yeah, it does. A little bit.
+Few rules from TSLint have no equivalents in ESLint.
+And some of the ESLint rules are just blatantly worse.
+For example:
+`ordered-imports` rule from TSLint is split to two in ESLint
+(sort-imports and grouped-imports probably),
+which of course, can conflict with each other.
+
+</Notes>
+
+---
+
+But I already have ESLint and JS/TS codebase.
+
+Can I use ESLint for both languages?
+
+---
+
+[markdown](/assets/linting-mixed-codebase.md)
+
+---
+
+# Links
+
+- Why Prettier?
+  https://prettier.io/docs/en/why-prettier.html
+- Dan Abramov on linting, imaginary and real problems
+  https://overreacted.io/writing-resilient-components/
+
+---
+
+<!-- thanks -->
+
+![](https://media3.giphy.com/media/QAsBwSjx9zVKoGp9nr/giphy.gif)
+
+import GithubCorner from "react-github-corner";
+
+<GithubCorner href="https://github.com/hasparus/linter-overload" />
