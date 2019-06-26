@@ -1,10 +1,19 @@
-﻿# [matryoshka-code.now.sh](matryoshka-code.now.sh)
+﻿# [linter-overload.now.sh](linter-overload.now.sh)
+
+---
+
+## Conversation starters
+
+- testing linter configs -- should we? how?
+- story of jsx-no-lambda -- linter induced premature optimization
+
+<GithubCorner href="https://github.com/hasparus/linter-overload" />
+
+---
 
 ## Links
 
-- John Carmack on inlined code
-  http://number-none.com/blow/john_carmack_on_inlined_code.html
-- ch-athens on Matryoshka Code
-  http://betabug.ch/blogs/ch-athens/1352
-- Kent C. Dodds on avoiding hasty abstractions
-  https://kentcdodds.com/blog/aha-programming
+- Why Prettier?
+  https://prettier.io/docs/en/why-prettier.html
+- Dan Abramov on linting, imaginary and real problems
+  https://overreacted.io/writing-resilient-components/
