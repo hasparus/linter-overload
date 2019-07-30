@@ -136,18 +136,18 @@ with ESLint 6.0 it becomes pretty boring.
 
 ```js
 {
-"eslint.validate": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     {
-        "language": "typescript",
-        "autoFix": true
+      "language": "typescript",
+      "autoFix": true
     },
     {
-        "language": "typescriptreact",
-        "autoFix": true
+      "language": "typescriptreact",
+      "autoFix": true
     }
-],
+  ],
 }
 ```
 
